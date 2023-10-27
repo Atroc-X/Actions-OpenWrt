@@ -11,7 +11,7 @@
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 
 # 修改默认主题
-sed -i 's/luci-theme-bootstrap/luci-theme-atmaterial/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # 修改主机名
 sed -i '/uci commit system/i\uci set system.@system[0].hostname=Atroc-x86' package/lean/default-settings/files/zzz-default-settings
@@ -48,9 +48,9 @@ sed -i '/uci commit system/i\uci set system.@system[0].hostname=Atroc-x86' packa
 #sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
 
 # 清除旧版argon主题并拉取最新版
-pushd package/lean
-rm -rf luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
-popd
+#pushd package/lean
+#rm -rf luci-theme-argon
+#git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon luci-theme-argon
+#popd
 
 echo 'All right!'
